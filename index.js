@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", getData);
 
 function getData(){
     //console.log("getData")
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve/")
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve")
     .then(res=>res.json())
     .then(useData)
 }
