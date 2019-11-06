@@ -13,22 +13,22 @@ function useData(myData){
 
 window.addEventListener("DOMContentLoaded", getData);
 
-function getData(){
+function getData() {
     //console.log("getData")
     fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve")
-    .then(res=>res.json())
-    .then(useData)
+        .then(res => res.json())
+        .then(useData)
 }
 
-function useData(myData){
+function useData(myData) {
     //console.log(myData)
 
     //1- Loop the array
     myData.forEach(showEvent)
 }
 
-function showEvent(event){
-   console.log(event)
+function showEvent(event) {
+    console.log(event)
     //2- Clone the template
     //image
     /*const imgPath = event._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url;*/
@@ -61,7 +61,7 @@ function showEvent(event){
 
     //subpage
     const a = eventCopy.querySelector("a");
-    a.href="sub.html?id="+event.id
+    a.href = "sub.html?id=" + event.id
 
     //4- Append
     document.querySelector("#events").appendChild(eventCopy);
