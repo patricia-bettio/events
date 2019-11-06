@@ -3,16 +3,16 @@ const id = urlParams.get("id");
 console.log(id)
 
 
-fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve/"+id)
-.then(res=>res.json())
-.then(showEvent)
+fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve/" + id)
+    .then(res => res.json())
+    .then(showEvent)
 
-function showEvent(event){
+function showEvent(event) {
     console.log(event)
-    document.querySelector("article h1").textContent=event.title.rendered;
+    document.querySelector("article h1").textContent = event.title.rendered;
 
-    document.querySelector(".longdescription").textContent=event.content.rendered;
+    document.querySelector(".longdescription").textContent = event.content.rendered;
 
-    document.querySelector(".artist").textContent=event.support_artist;
+    document.querySelector(".artist").textContent = event.support_artist;
 
 }
