@@ -42,6 +42,15 @@ function showEvent(event){
     const prices = eventCopy.querySelector(".prices");
     prices.innerHTML = event.price;
 
+    const date = eventCopy.querySelector(".date");
+    date.textContent = event.time_and_date;
+
+    const shortdescription = eventCopy.querySelector(".shortdescription");
+    shortdescription.textContent = event.description;
+
+
+
+
 
 
     /*image

@@ -13,4 +13,6 @@ function showEvent(event){
 
     document.querySelector(".longdescription").textContent=event.content.rendered;
 
+    document.querySelector(".artist").textContent=event.support_artist;
+
 }
