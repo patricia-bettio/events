@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", getData);
 
 function getData() {
     //console.log("getData")
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve")
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed")
         .then(res => res.json())
         .then(useData)
 }
@@ -31,8 +31,8 @@ function showEvent(event) {
     console.log(event)
     //2- Clone the template
     //image
-    /*const imgPath = event._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url;*/
-
+    const imgPath = event._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url;
+console.log(imgPath)
     const template = document.querySelector(".eventTemplate").content;
     const eventCopy = template.cloneNode(true);
     //3- textcontent and ineer HTML

@@ -7,7 +7,7 @@ function getData() {
 
 
     //console.log("getData")
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed/search=" + search)
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed&search=" + search)
         .then(res => res.json())
         .then(useData)
 }
