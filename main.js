@@ -3,9 +3,14 @@ window.addEventListener("DOMContentLoaded", init);
 function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get("search");
+    const id = urlParams.get("id");
+
     if (search) {
         console.log("this is a search")
         getSearchData();
+    } else if(id) {
+              getSingleEvent();
+
     } else {
         console.log("NOT searching")
         getEventsData();
@@ -31,6 +36,25 @@ function getEventsData() {
     fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed")
         .then(res => res.json())
         .then(useData)
+}
+
+function getSingleEvent() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get("id");
+    console.log(id)
+
+
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve/" + id)
+        .then(res => res.json())
+        .then(showEvent)
+
+    function showEvent(event) {
+        console.log(event)
+        document.querySelector("article h1").textContent = event.title.rendered;
+        document.querySelector(".longdescription").textContent = event.content.rendered;
+        document.querySelector(".artist").textContent = event.support_artist;
+    }
+
 }
 
 function useData(myData) {

@@ -10,16 +10,9 @@ fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve/" + i
 function showEvent(event) {
     console.log(event)
 
-        //console.log(imgPath)
-
     document.querySelector("article h1").textContent = event.title.rendered;
 
     document.querySelector(".longdescription").textContent = event.content.rendered;
 
     document.querySelector(".artist").textContent = event.support_artist;
-
-    //image settings
-
-
-
 }
