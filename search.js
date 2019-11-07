@@ -22,6 +22,9 @@ function useData(myData) {
 function showEvent(event) {
     console.log(event)
     //2- Clone the template
+    //image
+    const imgPath = event._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url;
+    console.log(imgPath)
 
     const template = document.querySelector(".eventTemplate").content;
     const eventCopy = template.cloneNode(true);
@@ -37,6 +40,13 @@ function showEvent(event) {
 
     const shortdescription = eventCopy.querySelector(".shortdescription");
     shortdescription.textContent = event.description;
+
+    //image settings
+
+    const img = eventCopy.querySelector("img.cover");
+
+    img.setAttribute("src", imgPath)
+    img.setAttribute("alt", "Image of " + event.title.rendered)
 
     //subpage
     const a = eventCopy.querySelector("a");

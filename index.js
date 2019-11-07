@@ -53,11 +53,11 @@ console.log(imgPath)
 
 
 
-    /*image
+    //image
     const img = eventCopy.querySelector("img.cover");
 
     img.setAttribute("src", imgPath)
-    img.setAttribute("alt", "Cover of the book" + event.title.rendered)*/
+    img.setAttribute("alt", "Cover of the book" + event.title.rendered)
 
     //subpage
     const a = eventCopy.querySelector("a");
