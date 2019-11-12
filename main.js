@@ -24,7 +24,7 @@ function init() {
 }
 
 function getNavigation (){
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/categories?")
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/categories?")
     .then(res => res.json())
         .then(data=>{
         //console.log(data)
@@ -35,7 +35,7 @@ function getNavigation (){
 function addLink(oneItem){
    //console.log(oneItem);
    // document.querySelector("nav").innerHTML=oneItem.name
-    if(oneItem.parent === 0 && oneItem.count> 0){
+    if(oneItem.parent === 3 && oneItem.count> 0){
     const link = document.createElement("a");
     link.textContent = oneItem.name;
     link.setAttribute("href", "category.html?category="+oneItem.id);
@@ -49,7 +49,7 @@ function getSearchData() {
 
 
     //console.log("getData")
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed&search=" + search)
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/events?_embed&search=" + search)
         .then(res => res.json())
         .then(useData)
 }
@@ -58,14 +58,14 @@ function getSearchData() {
 
 function getEventsData() {
     //console.log("getData")
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed")
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/events?_embed")
         .then(res => res.json())
         .then(useData)
 }
 
 function getCategoryData(categoryId) {
-    console.log("categoryId");
-      fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed&categories="+ categoryId)
+    //console.log("categoryId");
+      fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/events?_embed&categories="+ categoryId)
         .then(res => res.json())
         .then(useData)
 
@@ -74,18 +74,19 @@ function getCategoryData(categoryId) {
 function getSingleEvent() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
-    console.log(id)
+    //console.log(id)
 
 
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve/" + id)
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/events/" + id)
         .then(res => res.json())
         .then(showEvent)
 
     function showEvent(event) {
-        console.log(event)
+        //console.log(event)
         document.querySelector("article h1").textContent = event.title.rendered;
+
         document.querySelector(".longdescription").textContent = event.content.rendered;
-        document.querySelector(".artist").textContent = event.support_artist;
+        document.querySelector(".artist").textContent = event.artist;
     }
 
 }
@@ -101,7 +102,7 @@ function showEvent(event) {
     //2- Clone the template
     //image
     const imgPath = event._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url;
-    //console.log(imgPath)
+    console.log(imgPath)
     const template = document.querySelector(".eventTemplate").content;
     const eventCopy = template.cloneNode(true);
     //3- textcontent and ineer HTML
@@ -112,15 +113,10 @@ function showEvent(event) {
     prices.innerHTML = event.price;
 
     const date = eventCopy.querySelector(".date");
-    date.textContent = event.time_and_date;
+    date.textContent = event.when;
 
     const shortdescription = eventCopy.querySelector(".shortdescription");
     shortdescription.textContent = event.description;
-
-
-
-
-
 
     //image
     const img = eventCopy.querySelector("img.cover");

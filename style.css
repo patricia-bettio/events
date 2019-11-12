@@ -71,6 +71,7 @@ body {
 /*grid*/
 @supports (display: grid) {
 
+/*
     .left {
         grid-area: left;
     } .right {
@@ -79,6 +80,7 @@ body {
     .menu {
      grid-area: menu;
     }
+*/
     #events {
             display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -106,4 +108,17 @@ aside {
     display: block;
     height: 30px;
     padding: 1px;
+}
+
+/*NAV categories*/
+nav {
+    display: block;
+    position: relative;
+}
+nav .fixed {
+    display: flex;
+}
+nav .a {
+    display: flex;
+    flex-flow: column;
 }
