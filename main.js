@@ -24,7 +24,7 @@ function init() {
 }
 
 function getNavigation (){
-    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/categories?per_page=100")
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/categories?")
     .then(res => res.json())
         .then(data=>{
         //console.log(data)
