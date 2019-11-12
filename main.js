@@ -1,22 +1,47 @@
+
+
 window.addEventListener("DOMContentLoaded", init);
 
 function init() {
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get("search");
     const id = urlParams.get("id");
+    const category = urlParams.get("category");
 
     if (search) {
-        console.log("this is a search")
+        //console.log("this is a search")
         getSearchData();
     } else if(id) {
-              getSingleEvent();
-
+        getSingleEvent();
+    } else if(category){
+            //category
+     getCategoryData(category);
     } else {
-        console.log("NOT searching")
+        //console.log("NOT searching")
         getEventsData();
     }
+    getNavigation()
 }
 
+function getNavigation (){
+    fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/categories?per_page=100")
+    .then(res => res.json())
+        .then(data=>{
+        //console.log(data)
+        data.forEach(addLink)
+    } )
+}
+
+function addLink(oneItem){
+   //console.log(oneItem);
+   // document.querySelector("nav").innerHTML=oneItem.name
+    if(oneItem.parent === 0 && oneItem.count> 0){
+    const link = document.createElement("a");
+    link.textContent = oneItem.name;
+    link.setAttribute("href", "category.html?category="+oneItem.id);
+    document.querySelector("nav").appendChild(link);
+}
+}
 function getSearchData() {
     const urlParams = new URLSearchParams(window.location.search);
     const search = urlParams.get("search");
@@ -36,6 +61,14 @@ function getEventsData() {
     fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed")
         .then(res => res.json())
         .then(useData)
+}
+
+function getCategoryData(categoryId) {
+    console.log("categoryId");
+      fetch("http://dredesigns.dk/MyWordpress/wp-json/wp/v2/concerts_theatre_eve?_embed&categories="+ categoryId)
+        .then(res => res.json())
+        .then(useData)
+
 }
 
 function getSingleEvent() {
@@ -63,7 +96,6 @@ function useData(myData) {
     //1- Loop the array
     myData.forEach(showEvent)
 }
-
 function showEvent(event) {
     //console.log(event)
     //2- Clone the template
@@ -92,7 +124,6 @@ function showEvent(event) {
 
     //image
     const img = eventCopy.querySelector("img.cover");
-
     img.setAttribute("src", imgPath)
     img.setAttribute("alt", "Image of" + event.title.rendered)
 
@@ -103,4 +134,14 @@ function showEvent(event) {
     //4- Append
     document.querySelector("#events").appendChild(eventCopy);
 
+}
+
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+function setMenu() {
+  var x = document.getElementById("menuBar");
+  if (x.className === "menu") {
+    x.className += "responsive";
+  } else {
+    x.className = "menu";
+  }
 }
