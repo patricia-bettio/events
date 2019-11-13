@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
 
 <head>
     <meta charset="utf-8">
@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <header>
+<header>
+<!--
 <div class="menu" id="menuBar">
   <a href="home.html" class="active">Huset</a>
   <a href="bastard.html">Bastard Cafe</a>
@@ -18,20 +19,38 @@
     <i class="fa fa-bars"></i>
   </a>
 </div>
+-->
     </header>
+    <!-- social media bar -->
+        <aside class="left">
+            <div class="somebar">
+                <a href="https://www.facebook.com/Huset.Koebenhavn/" target="_blank"><img src="img/facebookicon.png" class="facebook" alt="facebook logo"></a>
+                <a href="https://www.instagram.com/husetkbh/?hl=da" class="github" target="_blank"><img src="img/insta.jpg" class="insta" alt="insta logo"></a>
+            </div>
+
+        </aside>
+        <aside class="right"></aside>
+
+
+    <main>
     <h1>Events</h1>
     <form action="search.html">
         <input name="search" type="search">
         <input type="submit" value="search">
     </form>
-    <nav>
+        <nav>
         <a href="index.html" class="fixed">Events</a>
-    </nav>
+        </nav>
+        <div id="tagNav">
+            <a href="" class="tagId">Tags</a>
+        </div>
+        <p class="no-events-text">There are no events matching your tag.</p>
+
     <section id="events"></section>
     <template class="eventTemplate">
         <article>
             <header>
-                <a href="sub.html?id=51">><h1>Title of Event here</h1></a>
+                <a href="sub.html?id=40">><h1>Title of Event here</h1></a>
                 <p class="prices">price</p>
 
                 <img src="" alt="" class="cover">
@@ -40,6 +59,7 @@
             <p class="shortdescription"></p>
         </article>
     </template>
+    </main>
     <script src="main.js"></script>
 </body>
 

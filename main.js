@@ -7,6 +7,7 @@ function init() {
     const search = urlParams.get("search");
     const id = urlParams.get("id");
     const category = urlParams.get("category");
+    const tag = urlParams.get("tag");
 
     if (search) {
         //console.log("this is a search")
@@ -15,21 +16,46 @@ function init() {
         getSingleEvent();
     } else if(category){
             //category
-     getCategoryData(category);
+        getCategoryData(category);
+    } else if(tag) {
+        getTagData(tag); // the id of the tag
     } else {
         //console.log("NOT searching")
         getEventsData();
     }
     getNavigation()
+    getTags();
 }
 
 function getNavigation (){
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/categories?")
     .then(res => res.json())
         .then(data=>{
-        //console.log(data)
+        console.log("categories here", data)
         data.forEach(addLink)
     } )
+}
+
+function getTags() {
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/tags?")
+    .then(res => res.json())
+    .then(data => {
+        console.log("tags here", data);
+        data.forEach(addTagLink);
+    })
+}
+
+function addTagLink(tag) {
+//    console.log(tag.name);
+    if(tag.name) {
+        const link = document.createElement("a");
+        link.textContent = tag.name;
+//        console.log(link);
+        link.setAttribute("href", "tags.html?tag="+tag.id);
+        // check if the URL contains the word "tags"
+        if (window.location.href.indexOf("search") == -1) // if equal to -1 then it does not contain the string ****
+            document.querySelector("#tagNav").appendChild(link);
+    }
 }
 
 function addLink(oneItem){
@@ -71,6 +97,13 @@ function getCategoryData(categoryId) {
 
 }
 
+function getTagData(tagId) {
+    console.log("tag id", tagId);
+    fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/events?_embed&tags="+ tagId) // if tag is empty, then the result of the link would be []
+        .then(res => res.json()) //
+        .then(useData)
+}
+
 function getSingleEvent() {
     const urlParams = new URLSearchParams(window.location.search);
     const id = urlParams.get("id");
@@ -85,17 +118,23 @@ function getSingleEvent() {
         //console.log(event)
         document.querySelector("article h1").textContent = event.title.rendered;
 
-        document.querySelector(".longdescription").textContent = event.content.rendered;
+        document.querySelector(".longdescription").innerHTML = event.content.rendered;
         document.querySelector(".artist").textContent = event.artist;
     }
 
 }
 
-function useData(myData) {
+function useData(myData) { // if the tag returns empty array, then myData = []
+    if(myData.length > 0){ // if there are events
+        myData.forEach(showEvent);
+    } else { // if there are no events
+        console.log("sorry no data");
+        document.querySelector(".no-events-text").classList.remove("no-events-text");
+    }
     //console.log(myData)
 
     //1- Loop the array
-    myData.forEach(showEvent)
+
 }
 function showEvent(event) {
     //console.log(event)

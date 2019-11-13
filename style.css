@@ -114,6 +114,8 @@ aside {
 nav {
     display: block;
     position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
 }
 nav .fixed {
     display: flex;
@@ -121,4 +123,8 @@ nav .fixed {
 nav .a {
     display: flex;
     flex-flow: column;
+}
+
+.no-events-text {
+    visibility: hidden;
 }
