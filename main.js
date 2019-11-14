@@ -115,9 +115,9 @@ function getSingleEvent() {
         .then(showEvent)
 
     function showEvent(event) {
-        //console.log(event)
+        console.log(event)
         document.querySelector("article h1").textContent = event.title.rendered;
-
+        document.querySelector(".cover").setAttribute("src", event.image.guid);
         document.querySelector(".longdescription").innerHTML = event.content.rendered;
         document.querySelector(".artist").textContent = event.artist;
     }
