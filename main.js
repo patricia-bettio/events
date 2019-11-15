@@ -146,7 +146,7 @@ function showEvent(event) {
     const eventCopy = template.cloneNode(true);
     //3- textcontent and ineer HTML
     const h1 = eventCopy.querySelector("h1");
-    h1.textContent = event.title.rendered;
+    h1.innerHTML = event.title.rendered;
 
     const prices = eventCopy.querySelector(".prices");
     prices.innerHTML = event.price;
