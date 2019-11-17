@@ -155,16 +155,18 @@ article {
 
 /* social media*/
 aside {
-    display: block;
+/*    display: block;*/
 }
 .facebook {
     display: block;
-    height: 30px;
+    height: 33px;
     padding: 1px;
+    border-radius: 5px;
 }.insta {
     display: block;
-    height: 30px;
-    padding: 1px;
+    height: 35px;
+    padding: 0px;
+    border-radius: 0px;
 }
 
 /*NAV categories*/
