@@ -24,33 +24,34 @@
 </div>
     </header>
 <!--     social media bar-->
+
+
+
+
+    <main>
         <aside class="left">
             <div class="somebar">
                 <a href="https://www.facebook.com/Huset.Koebenhavn/" target="_blank"><img src="img/facebookicon.png" class="facebook" alt="facebook logo"></a>
                 <a href="https://www.instagram.com/husetkbh/?hl=da" class="github" target="_blank"><img src="img/insta3.png" class="insta" alt="insta logo"></a>
             </div>
 </aside>
- <aside class="right"></aside>
--->
-
-
-    <main>
-    <h1>Events</h1>
-    <form action="search.html">
+    <h1 class="pageName">Events</h1>
+    <form action="search.html" class="search">
         <input name="search" type="search">
         <input type="submit" value="search">
     </form>
         <nav>
             <a href="index.html" class="fixed">All</a>
         </nav>
-        <div id="tagNav"></div>
+
+        <div id="tagNav"><p class="tagTitle">Tags</p></div>
 
     <section id="events"></section>
     <template class="eventTemplate">
         <article>
             <header>
                 <a href="sub.html?id=40"><h1>Title of Event here</h1></a>
-                <p class="prices">price</p>
+                <p class="prices">Entrance</p>
 
                 <img src="" alt="" class="cover">
             </header>
@@ -58,6 +59,7 @@
             <p class="shortdescription"></p>
         </article>
     </template>
+        <aside class="right"></aside>
     </main>
     <script src="main.js"></script>
 </body>
