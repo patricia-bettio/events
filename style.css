@@ -3,6 +3,7 @@
 body {
     background-color: white;
 
+
 }
 /*GRID*/
 p {
@@ -43,7 +44,7 @@ float: left;
   color: #f2f2f2;
   text-align: center;
  padding: 30px;
-  font-size: 17px;
+  font-size: 14px;
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
 }
@@ -100,6 +101,30 @@ background-size: contain;
   }
 }
 
+/***/
+/*COVER IMAGE*/
+
+.CoverImage {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: auto;
+    height: 600px;
+    width: auto;
+}
+/*.CoverImage:before {
+  content: "";
+  display: block;
+  padding-bottom: 50%;
+}*/
+
+/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 600px) {
+    .CoverImage {
+   height: 300px;
+    width: auto;
+  }
+}
 /*grid*/
 @supports (display: grid) {
 
