@@ -1,7 +1,7 @@
 <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
 body {
-    background-color: white;
+    background-color: whitesmoke;
 
 
 }
@@ -12,18 +12,23 @@ main {
 #events {
     display: flex;
     flex-direction: column;
+    background-color: whitesmoke;
 }
-/*GRID*/
+
 p {
     font-family: 'Nunito', sans-serif;
 }
 
+ header a {
+        text-decoration: none;
+    }
 
 h1 {
     font-family: 'Nunito', sans-serif;
     color: #A70928;
     text-decoration-line: none;
     text-decoration: none;
+    /*limits the color around the text content only instead of taking the entire cell*/
         width: max-content;
 }
 
@@ -172,8 +177,9 @@ align-items: center;
 justify-content: center;
     }
     .pageName {
-        grid-area: title;
-    background-color: red;
+    grid-area: title;
+        color: black;
+
 
 
     }
@@ -200,20 +206,27 @@ justify-content: center;
         justify-content: center;
     }
   /*EVENTS general style*/
+   /*events IMAGE*/
     img.cover {
         background-position: center;
         display: block;
         margin: 0 auto;
         width: 100%;
         height: auto;
-
+        opacity: 1;
     }
+    /*image HOVER*/
+    img.cover:hover  {
+  opacity: 0.5;
+
+}
     p.shortdescription {
         text-align: left;
     }
     p.date {
         text-align: right;
     }
+
     /*TAGS categories*/
 
     p.tagTitle {
@@ -227,7 +240,7 @@ justify-content: center;
 }
 #tagNav {
      display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr 1fr 1fr));
     grid-template-rows: 100px 20px 20px 20px 1fr;
     grid-gap: 5px;
     padding: 0px;
@@ -289,9 +302,17 @@ nav .fixed {
 nav.a {
     display: flex;
     flex-flow: column;
-    text-decoration: underline;
+}
 
+nav a:hover {
+  color: #f2f2f2;
+border-bottom: 3px solid #f25244;
 
+}
+
+nav a.fixed {
+    border-bottom: 3px solid #f25244;
+  }
 }
 
 .no-events-text {
