@@ -1,4 +1,5 @@
-<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+
+
 
 body {
     background-color: whitesmoke;
@@ -8,48 +9,61 @@ body {
 main {
     display: flex;
     flex-direction: column;
+    background-color: whitesmoke;
 }
 #events {
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 p {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
+p.prices {
+    font-family:'Merriweather Sans', sans-serif;
+    color: #808080;
+
+}
  header a {
         text-decoration: none;
     }
 
 h1 {
-    font-family: 'Nunito', sans-serif;
-    color: #A70928;
+    font-family:'Roboto', sans-serif;
+    color: black;
     text-decoration-line: none;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
+    color: #f25244;
     /*limits the color around the text content only instead of taking the entire cell*/
-        width: max-content;
+/*        width: max-content;*/
+    padding: 10px;
 }
+
 
 .left {
     grid-area: left;
 }
 
 nav a{
-    font-family: 'Nunito', sans-serif;
-    font-size: 18px;
+    font-family:'Roboto', sans-serif;
+    font-size: 14px;
     text-transform:uppercase;
     padding: 14px 16px;
-    color: white;
+    color: #f2f2f2;
     text-decoration: none;
+    font-weight: 300;
 
 }
 
 #tagNav>a {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-decoration: none;
     font-size: 14px;
+    color: #a70928;
 }
 /* MENU */
 
@@ -71,9 +85,9 @@ float: left;
   color: #f2f2f2;
   text-align: center;
  padding: 30px;
-  font-size: 14px;
+  font-size: 18px;
     text-decoration: none;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Change the color of links on hover */
@@ -178,7 +192,10 @@ justify-content: center;
     }
     .pageName {
     grid-area: title;
-        color: black;
+        color: #f25244;
+       font-family: 'Roboto', sans-serif;
+        background-color: whitesmoke;
+       border-bottom: 3px solid #f25244;
 
 
 
@@ -222,9 +239,12 @@ justify-content: center;
 }
     p.shortdescription {
         text-align: left;
+        font-weight: 100;
+        font-family: 'Roboto', sans-serif;
     }
     p.date {
         text-align: right;
+        font-weight: 100;
     }
 
     /*TAGS categories*/
@@ -294,6 +314,7 @@ nav {
     text-align: center;
      background-color: black;
     color: white;
+    opacity: 0.9;
 
 }
 nav .fixed {
@@ -320,13 +341,13 @@ nav a.fixed {
 }
 /* TAGS style */
 p.tagTitle {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
     }
 #tagNav>a {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
         border: 1px;
         border-style: solid;
-        border-color: aqua;
+        border-color: #f2cfc2;
     border-radius: 8px;
     padding: 0 5px 0 5px;
      width: max-content;
@@ -336,7 +357,7 @@ p.tagTitle {
 input[type="search"] {
     width: 100px;
     height: 30px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
     border: 1px;
     border-style: solid;
     border-color:gainsboro;
@@ -345,7 +366,7 @@ input[type="search"] {
 input[type="submit"] {
 width: 80px;
     height: 30px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: capitalize;
     border: 0px;
     border-style: none;
