@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Events</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <header>
-        <div class="CoverImage FlexEmbed FlexEmbed--3by1"
+<header>
+      <div class="CoverImage FlexEmbed FlexEmbed--3by1"
      style="background-image:url(img/fun_huset.jpg)">
 </div>
 <div class="menu" id="menuBar">
@@ -21,7 +24,51 @@
   </a>
 </div>
     </header>
+<!--     social media bar-->
 
+
+
+
+    <main>
+        <aside class="left">
+            <div class="somebar">
+                <a href="https://www.facebook.com/Huset.Koebenhavn/" target="_blank"><img src="img/facebookicon.png" class="facebook" alt="facebook logo"></a>
+                <a href="https://www.instagram.com/husetkbh/?hl=da" class="github" target="_blank"><img src="img/insta3.png" class="insta" alt="insta logo"></a>
+            </div>
+</aside>
+<!--        <h1 class="venueHouse">Events</h1>-->
+  <!--  <form action="search.html" class="search">
+        <input name="search" type="search">
+        <input type="submit" value="search">
+    </form>-->
+        <!--<nav>
+            <a href="index.html" class="fixed">All</a>
+        </nav>
+-->
+<!--<div id="tagNav"><p class="tagTitle">Tags</p></div>-->
+
+    <section id="venues"></section>
+    <template class="venueTemplate">
+        <article>
+            <header>
+                <h1 class="venueHouse">Title of Event here</h1>
+                </header>
+                <p class="venueDescription">description of venue</p>
+
+                <img src="" alt="" class="cover">
+
+            <p class="location">location</p>
+            <p class="hours">hours</p>
+            <p class="contactName">name</p>
+            <p class="contactEmail">email</p>
+            <p class="phone">phone</p>
+            <p class="externalSite">site</p>
+
+        </article>
+    </template>
+        <aside class="right"></aside>
+    </main>
     <script src="main.js"></script>
 </body>
+
 </html>
