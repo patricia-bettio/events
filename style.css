@@ -14,7 +14,7 @@ main {
 #events {
     display: flex;
     flex-direction: column;
-    background-color: white;
+    background-color: whitesmoke;
 }
 
 p {
@@ -30,22 +30,24 @@ p.prices {
         text-decoration: none;
     }
 
-h1 {
+.titleEvent {
     font-family:'Roboto', sans-serif;
     color: black;
     text-decoration-line: none;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
-    color: #f25244;
+    font-size: 14px;
+    text-align:left;
+    text-transform:capitalize;
+    font-weight: 200;
     /*limits the color around the text content only instead of taking the entire cell*/
-/*        width: max-content;*/
+width: max-content;
     padding: 10px;
 }
 
 
 .left {
     grid-area: left;
+
 }
 
 nav a{
@@ -172,8 +174,7 @@ background-size: contain;
    .left {
         grid-area: left;
        position:fixed;
-   z-index: -1;
-
+   z-index: 1;
     } #tagNav {
         grid-area: tags;
 
@@ -192,10 +193,12 @@ justify-content: center;
     }
     .pageName {
     grid-area: title;
-        color: #f25244;
+        color: lightgrey;
        font-family: 'Roboto', sans-serif;
-        background-color: whitesmoke;
-       border-bottom: 3px solid #f25244;
+        background-color: white;
+/*       border-bottom: 3px solid #f25244;*/
+        width: max-content;
+        text-transform: lowercase;
 
 
 
@@ -205,8 +208,8 @@ justify-content: center;
         display: grid;
         grid-template-columns: 250px 1fr 250px;
         grid-template-areas:
-            "left title search"
             "nav nav nav"
+            "left title search"
             ". events tags";
     }
     #events {
@@ -240,6 +243,7 @@ justify-content: center;
     p.shortdescription {
         text-align: left;
         font-weight: 100;
+        font-size: 14px;
         font-family: 'Roboto', sans-serif;
     }
     p.date {
@@ -315,7 +319,6 @@ nav {
     text-align: center;
      background-color: black;
     color: white;
-    opacity: 0.9;
 
 }
 nav .fixed {
