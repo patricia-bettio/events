@@ -21,10 +21,12 @@ p {
 
 h1 {
     font-family: 'Nunito', sans-serif;
+    color: #A70928;
+    text-decoration-line: none;
+    text-decoration: none;
+        width: max-content;
 }
-.pageName {
 
-    }
 .left {
     grid-area: left;
 }
@@ -34,6 +36,8 @@ nav a{
     font-size: 18px;
     text-transform:uppercase;
     padding: 14px 16px;
+    color: white;
+    text-decoration: none;
 
 }
 
@@ -51,6 +55,7 @@ nav a{
     position: fixed;
   top: 0;
   width: 100%;
+    z-index: 1;
 }
 
 
@@ -148,8 +153,7 @@ background-size: contain;
    .left {
         grid-area: left;
        position:fixed;
-       justify-content: center;
-       align-items: center;
+   z-index: -1;
 
     } #tagNav {
         grid-area: tags;
@@ -169,23 +173,23 @@ justify-content: center;
     }
     .pageName {
         grid-area: title;
-        display: inline;
+    background-color: red;
 
 
     }
+
     main {
         display: grid;
         grid-template-columns: 250px 1fr 250px;
         grid-template-areas:
-            "left . ."
-            ". title search"
-            ". nav ."
+            "left title search"
+            "nav nav nav"
             ". events tags";
     }
     #events {
         display: grid;
         grid-area: events;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         /* Keep adding new columns - even if theres is no content for them. content does not alwys take up full width */
         /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
         /* Don't add more columns than theres is content for. && +content "always" take full width */
@@ -196,10 +200,12 @@ justify-content: center;
         justify-content: center;
     }
   /*EVENTS general style*/
-    img .cover {
-        height: 200px;
-        width: auto;
+    img.cover {
         background-position: center;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
 
     }
     p.shortdescription {
@@ -216,16 +222,21 @@ justify-content: center;
     #tagNav.a {
         grid-area: tagItem;
     }
+    #tagNav .no-events-text {
+    grid-area: noresult;
+}
 #tagNav {
      display: grid;
-    position: relative;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 50px 30px 30px 30px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 20px 20px 20px 1fr;
     grid-gap: 5px;
     padding: 0px;
     grid-template-areas: "tagTitle tagTitle tagTitle"
         "tagItem tagItem tagItem";
+        "noresult . .";
     text-align: center;
+
+
 }
 
 }
@@ -248,12 +259,14 @@ aside {
 /*    display: block;*/
 }
 .facebook {
-    display: block;
+    display: inline-block;
+    margin: 0px auto;
     height: 33px;
     padding: 1px;
     border-radius: 5px;
 }.insta {
-    display: block;
+    display: inline-block;
+    margin: 0 auto;
     height: 35px;
     padding: 0px;
     border-radius: 0px;
@@ -292,9 +305,10 @@ p.tagTitle {
     font-family: 'Nunito', sans-serif;
         border: 1px;
         border-style: solid;
-        border-color: black;
+        border-color: aqua;
     border-radius: 8px;
     padding: 0 5px 0 5px;
+     width: max-content;
     }
 /* SEARCH style*/
 
@@ -302,8 +316,9 @@ input[type="search"] {
     width: 100px;
     height: 30px;
     font-family: 'Nunito', sans-serif;
-    border: 2px;
+    border: 1px;
     border-style: solid;
+    border-color:gainsboro;
 
 }
 input[type="submit"] {
@@ -313,6 +328,7 @@ width: 80px;
     text-transform: capitalize;
     border: 0px;
     border-style: none;
+    background-color: whitesmoke;
 }
 
 

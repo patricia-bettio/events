@@ -140,7 +140,7 @@ function showEvent(event) {
     //console.log(event)
     //2- Clone the template
     //image
-    const imgPath = event._embedded["wp:featuredmedia"][0].media_details.sizes.thumbnail.source_url;
+    const imgPath = event._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
     console.log(imgPath)
     const template = document.querySelector(".eventTemplate").content;
     const eventCopy = template.cloneNode(true);
