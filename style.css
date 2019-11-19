@@ -2,7 +2,7 @@
 
 
 body {
-    background-color: whitesmoke;
+    background-color: white;
 
 
 }
@@ -14,12 +14,12 @@ main {
 #events {
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke;
+    background-color: white;
 }
 #venues {
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke;
+    background-color: white;
 }
 
 
@@ -43,7 +43,7 @@ p.prices {
     text-decoration: none;
     font-size: 14px;
     text-align:left;
-    text-transform:capitalize;
+    text-transform:uppercase;
     font-weight: 200;
     /*limits the color around the text content only instead of taking the entire cell*/
 width: max-content;
@@ -67,12 +67,7 @@ nav a{
 
 }
 
-#tagNav>a {
-    font-family: 'Roboto', sans-serif;
-    text-decoration: none;
-    font-size: 14px;
-    color: #6b6b6b;
-}
+
 /* MENU */
 
 .menu {
@@ -424,14 +419,17 @@ nav a.fixed {
 /* TAGS style */
 p.tagTitle {
     font-family: 'Roboto', sans-serif;
+    color: black;
     }
 #tagNav>a {
     font-family: 'Roboto', sans-serif;
-        border: 1px;
-        border-style: solid;
-        border-color: #b0b0b0;
+    text-decoration: none;
+
+    color: white;
+    background-color: black;
+
     border-radius: 8px;
-    padding: 0 5px 0 5px;
+    padding: 2px 8px;
      width: max-content;
     }
 /* SEARCH style*/
