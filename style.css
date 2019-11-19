@@ -169,7 +169,58 @@ background-size: contain;
   }
 }
 /*grid*/
+
+
 @supports (display: grid) {
+
+
+    .imageBastardlogo {
+            position: relative;
+    top: 600px;
+    width: 80px;
+    height: auto;
+    z-index: 1;
+    }
+   /* BASTARD CAFE page
+
+    .leftVenue {
+        grid-area: leftV;
+    }
+    .venueHouse {
+        grid-area: titleV;
+    }
+    .venueDescription {
+        grid-area: description;
+    }
+    .location {
+        grid-area: location;
+    }
+    .hours {
+        grid-area: hours;
+    }
+    .contactName {
+        grid-area: cname;
+    }
+    .phone {
+        grid-area: phone;
+    }
+    .externalSite {
+        grid-area: site;
+    }
+    .mainVenue {
+        grid-area: mainV;
+    }
+
+    .mainVenue {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "leftV . ."
+            "leftV titleV location"
+            "leftV description hours"
+            "leftV";
+    }
+    */
+
 
    .left {
         grid-area: left;
