@@ -189,7 +189,7 @@ function useData(myData) { // if the tag returns empty array, then myData = []
         myData.forEach(showEvent);
     } else { // if there are no events
         //console.log("sorry no data");
-        document.querySelector(".no-events-text").classList.remove("no-events-text");
+        document.querySelector(".no-events-text").classList.add("show");
     }
     //console.log(myData)
 }
@@ -236,7 +236,7 @@ function setMenu() {
     console.log(setMenu);
     var x = document.getElementById("menuBar");
     if (x.className === "menu") {
-        x.className += "responsive";
+        x.className += " responsive";
     } else {
         x.className = "menu";
     }

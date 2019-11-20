@@ -36,6 +36,7 @@ p.prices {
 }
  header a {
         text-decoration: none;
+
     }
 
 .titleEvent {
@@ -49,7 +50,6 @@ p.prices {
     font-weight: 200;
     /*limits the color around the text content only instead of taking the entire cell*/
 width: max-content;
-    padding: 10px;
 }
 
 
@@ -215,7 +215,7 @@ justify-content: center;
 
     main.eventsMain {
         display: grid;
-        grid-template-columns: 250px 1fr 250px;
+        grid-template-columns: 200px 1fr 250px;
         grid-template-areas:
             "nav nav nav"
             "left title search"
@@ -235,7 +235,19 @@ justify-content: center;
         justify-content: center;
 
     }
+/*SUB page: detailed event*/
+    .subArticle {
+        grid-area: subArt;
+    }
+    main.subMain {
+        display: grid;
 
+        grid-template-areas:
+            "nav nav nav"
+            "left pageName search"
+            "left subArt tags"
+            ". . noresult";
+    }
     /*BASTARD CAFE page*/
 
     .imageBastardlogo {
@@ -338,8 +350,6 @@ justify-content: center;
         grid-area: tagItem;
 
     }
-    #tagNav .no-events-text {
-    grid-area: noresult;
 }
 #tagNav {
      display: grid;
@@ -417,10 +427,12 @@ border-bottom: 3px solid #f25244;
 nav a.fixed {
     border-bottom: 3px solid #f25244;
   }
-}
 
-.no-events-text {
-    visibility: hidden;
+.no-events-text{
+    display: none;
+}
+.no-events-text.show {
+    display: block;
 }
 /* TAGS style */
 p.tagTitle {
