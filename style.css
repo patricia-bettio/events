@@ -246,7 +246,7 @@ justify-content: center;
             "nav nav nav"
             "left pageName search"
             "left subArt tags"
-            ". . noresult";
+            "/ / noresult";
     }
     /*BASTARD CAFE page*/
 
@@ -350,28 +350,24 @@ justify-content: center;
         grid-area: tagItem;
 
     }
-}
-#tagNav {
+
+    #tagNav {
      display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr 1fr 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 20px 20px 20px 1fr;
     grid-gap: 5px;
     padding: 0px;
+         text-align: center;
     grid-template-areas: "tagTitle tagTitle tagTitle"
         "tagItem tagItem tagItem";
-        "noresult . .";
-    text-align: center;
-
+        "noresult / /";
+}
 
 
 }
 
-}
+/**/
 
-
-
-
-/* END @supports grid */
 
 article {
     display: flex;
@@ -380,21 +376,22 @@ article {
 }
 
 /* social media*/
-aside {
-/*    display: block;*/
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
 }
-.facebook {
-    display: inline-block;
-    margin: 0px auto;
-    height: 33px;
-    padding: 1px;
-    border-radius: 5px;
-}.insta {
-    display: inline-block;
-    margin: 0 auto;
-    height: 35px;
-    padding: 0px;
-    border-radius: 0px;
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
 }
 
 /*NAV categories*/
