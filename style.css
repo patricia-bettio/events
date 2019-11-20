@@ -155,9 +155,9 @@ background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
   margin: auto;
-    height: 600px;
+    height: 350px;
     width: auto;
-filter: grayscale(0%)
+filter: grayscale(100%)
 }
 /*.CoverImage:before {
   content: "";
@@ -211,11 +211,7 @@ justify-content: center;
 /*       border-bottom: 3px solid #f25244;*/
         width: max-content;
         text-transform: lowercase;
-        padding: 20px;
-
-
-
-    }
+      }
 
     main.eventsMain {
         display: grid;
@@ -234,7 +230,7 @@ justify-content: center;
         /* Don't add more columns than theres is content for. && +content "always" take full width */
         grid-gap: 3rem;
         /*general style*/
-        padding: 20px;
+        padding: 5px;
         align-items: center;
         justify-content: center;
 
@@ -324,6 +320,7 @@ justify-content: center;
         font-weight: 100;
         font-size: 14px;
         font-family: 'Roboto', sans-serif;
+        padding: 10px;
     }
     p.date {
         font-family: 'Merriweather Sans', sans-serif;
@@ -360,9 +357,6 @@ justify-content: center;
 }
 
 }
-
-
-
 
 
 
