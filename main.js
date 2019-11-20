@@ -31,14 +31,14 @@ function init() {
 //BASTARD CAFE page
 
 function getVenue() {
-    console.log("getVenue")
+    //console.log("getVenue")
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/venues/48")
         .then(res => res.json())
         .then(showVenue)
 
 
     function showVenue(venue) {
-        console.log(venue);
+        //console.log(venue);
         //1.clone the template
         const template = document.querySelector(".venueTemplate").content;
         const venueCopy = template.cloneNode(true);
@@ -83,7 +83,7 @@ function getNavigation() {
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/categories?")
         .then(res => res.json())
         .then(data => {
-            console.log("categories here", data)
+            //console.log("categories here", data)
             data.forEach(addLink)
         })
 }
@@ -93,7 +93,7 @@ function getTags() {
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/tags?")
         .then(res => res.json())
         .then(data => {
-            console.log("tags here", data);
+            //console.log("tags here", data);
             data.forEach(addTagLink);
         })
 }
@@ -156,7 +156,7 @@ function getCategoryData(categoryId) {
 }
 
 function getTagData(tagId) {
-    console.log("tag id", tagId);
+    //console.log("tag id", tagId);
     fetch("http://pbstyle.dk/wpinstall/wordpress/wp-json/wp/v2/events?_embed&tags=" + tagId) // if tag is empty, then the result of the link would be []
         .then(res => res.json()) //
         .then(useData)
@@ -174,7 +174,7 @@ function getSingleEvent() {
         .then(showEvent)
 
     function showEvent(event) {
-        console.log(event)
+       // console.log(event)
         document.querySelector("article h1").textContent = event.title.rendered;
         document.querySelector(".cover").setAttribute("src", event.image.guid);
         document.querySelector(".longdescription").innerHTML = event.content.rendered;
@@ -188,7 +188,7 @@ function useData(myData) { // if the tag returns empty array, then myData = []
     if (myData.length > 0) { // if there are events
         myData.forEach(showEvent);
     } else { // if there are no events
-        console.log("sorry no data");
+        //console.log("sorry no data");
         document.querySelector(".no-events-text").classList.remove("no-events-text");
     }
     //console.log(myData)
@@ -200,7 +200,7 @@ function showEvent(event) {
     //2- Clone the template
     //image
     const imgPath = event._embedded["wp:featuredmedia"][0].media_details.sizes.full.source_url;
-    console.log(imgPath)
+    //console.log(imgPath)
 
     const template = document.querySelector(".eventTemplate").content;
     const eventCopy = template.cloneNode(true);
@@ -231,8 +231,9 @@ function showEvent(event) {
     document.querySelector("#events").appendChild(eventCopy);
 }
 
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on   the icon */
 function setMenu() {
+    console.log(setMenu);
     var x = document.getElementById("menuBar");
     if (x.className === "menu") {
         x.className += "responsive";
