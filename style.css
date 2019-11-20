@@ -157,7 +157,7 @@ background-size: contain;
   margin: auto;
     height: 600px;
     width: auto;
-filter: grayscale(60%)
+filter: grayscale(0%)
 }
 /*.CoverImage:before {
   content: "";
