@@ -246,7 +246,7 @@ justify-content: center;
             "nav nav nav"
             "left pageName search"
             "left subArt tags"
-            "/ / noresult";
+            ". noresult .";
     }
     /*BASTARD CAFE page*/
 
@@ -360,7 +360,7 @@ justify-content: center;
          text-align: center;
     grid-template-areas: "tagTitle tagTitle tagTitle"
         "tagItem tagItem tagItem";
-        "noresult / /";
+        ". noresult .";
 }
 
 
@@ -378,6 +378,7 @@ article {
 /* social media*/
 
 .fa {
+    display: block;
   padding: 20px;
   font-size: 30px;
   width: 50px;
@@ -385,6 +386,9 @@ article {
   text-decoration: none;
 }
 
+.fa:hover {
+  opacity: 0.7;
+}
 .fa-facebook {
   background: #3B5998;
   color: white;
@@ -392,6 +396,7 @@ article {
 .fa-instagram {
   background: #125688;
   color: white;
+    background-color: #dd4b39;
 }
 
 /*NAV categories*/
