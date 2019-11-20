@@ -15,6 +15,7 @@ main {
     display: flex;
     flex-direction: column;
     background-color: white;
+
 }
 #venues {
     display: flex;
@@ -29,7 +30,8 @@ p {
 
 p.prices {
     font-family:'Merriweather Sans', sans-serif;
-    color: #808080;
+    color: black;
+    text-decoration:overline;
 
 }
  header a {
@@ -41,7 +43,7 @@ p.prices {
     color: black;
     text-decoration-line: none;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     text-align:left;
     text-transform:uppercase;
     font-weight: 200;
@@ -58,7 +60,7 @@ width: max-content;
 
 nav a{
     font-family:'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     text-transform:uppercase;
     padding: 14px 16px;
     color: #f2f2f2;
@@ -96,7 +98,7 @@ float: left;
 /* Change the color of links on hover */
 .menu a:hover {
   color: #f2f2f2;
-border-bottom: 4px solid #f25244;
+border-bottom: 2px solid #f25244;
 
 }
 
@@ -155,6 +157,7 @@ background-size: contain;
   margin: auto;
     height: 600px;
     width: auto;
+filter: grayscale(60%)
 }
 /*.CoverImage:before {
   content: "";
@@ -208,6 +211,7 @@ justify-content: center;
 /*       border-bottom: 3px solid #f25244;*/
         width: max-content;
         text-transform: lowercase;
+        padding: 20px;
 
 
 
@@ -233,6 +237,7 @@ justify-content: center;
         padding: 20px;
         align-items: center;
         justify-content: center;
+
     }
 
     /*BASTARD CAFE page*/
@@ -307,6 +312,7 @@ justify-content: center;
         width: 100%;
         height: auto;
         opacity: 1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
     /*image HOVER*/
     img.cover:hover  {
@@ -320,9 +326,10 @@ justify-content: center;
         font-family: 'Roboto', sans-serif;
     }
     p.date {
+        font-family: 'Merriweather Sans', sans-serif;
         text-align: right;
         font-weight: 100;
-        color: #808080;
+        color: black;
     }
 
     /*TAGS categories*/
@@ -332,6 +339,7 @@ justify-content: center;
     }
     #tagNav.a {
         grid-area: tagItem;
+
     }
     #tagNav .no-events-text {
     grid-area: noresult;
@@ -346,6 +354,7 @@ justify-content: center;
         "tagItem tagItem tagItem";
         "noresult . .";
     text-align: center;
+
 
 
 }
@@ -363,6 +372,7 @@ justify-content: center;
 article {
     display: flex;
     flex-flow: column;
+
 }
 
 /* social media*/
@@ -392,6 +402,8 @@ nav {
     text-align: center;
      background-color: black;
     color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
 
 }
 nav .fixed {
@@ -418,19 +430,26 @@ nav a.fixed {
 }
 /* TAGS style */
 p.tagTitle {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
     color: black;
+    font-size: 18px;
     }
 #tagNav>a {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
     text-decoration: none;
 
+background-color: black;
     color: white;
-    background-color: black;
+    /*
+        background-image:  linear-gradient(black, grey);
+*/
 
-    border-radius: 8px;
+    border-radius: 15px;
     padding: 2px 8px;
      width: max-content;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+  text-align: center;
     }
 /* SEARCH style*/
 
@@ -441,16 +460,22 @@ input[type="search"] {
     border: 1px;
     border-style: solid;
     border-color:gainsboro;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
 
 }
 input[type="submit"] {
 width: 80px;
     height: 30px;
     font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     text-transform: capitalize;
     border: 0px;
     border-style: none;
-    background-color: white;
+    background-color: black;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
 }
 
 
@@ -462,4 +487,6 @@ width: 80px;
     width: 300px;
     height: auto;
     z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
 }
