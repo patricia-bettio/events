@@ -53,7 +53,7 @@ width: max-content;
 }
 
 
-.left {
+.somebar {
     grid-area: left;
 
 }
@@ -175,196 +175,6 @@ filter: grayscale(100%)
 /*grid*/
 
 
-@supports (display: grid) {
-
-
-
-
-
-
-
-   .left {
-        grid-area: left;
-       position:fixed;
-   z-index: 1;
-    } #tagNav {
-        grid-area: tags;
-
-align-items: center;
-justify-content: center;
-        padding: 10px;
-    }
-    nav {
-     grid-area: nav;
-    }
-    .search {
-        grid-area: search;
-        display: flex;
-align-items: center;
-justify-content: center;
-    }
-    .pageName {
-    grid-area: title;
-        color: lightgrey;
-       font-family: 'Roboto', sans-serif;
-        background-color: white;
-/*       border-bottom: 3px solid #f25244;*/
-        width: max-content;
-        text-transform: lowercase;
-      }
-
-    main.eventsMain {
-        display: grid;
-        grid-template-columns: 200px 1fr 250px;
-        grid-template-areas:
-            "nav nav nav"
-            "left title search"
-            ". events tags";
-    }
-    #events {
-        display: grid;
-        grid-area: events;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        /* Keep adding new columns - even if theres is no content for them. content does not alwys take up full width */
-        /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-        /* Don't add more columns than theres is content for. && +content "always" take full width */
-        grid-gap: 3rem;
-        /*general style*/
-        padding: 5px;
-        align-items: center;
-        justify-content: center;
-
-    }
-/*SUB page: detailed event*/
-    .subArticle {
-        grid-area: subArt;
-    }
-    main.subMain {
-        display: grid;
-
-        grid-template-areas:
-            "nav nav nav"
-            "left pageName search"
-            "left subArt tags"
-            ". noresult .";
-    }
-    /*BASTARD CAFE page*/
-
-    .imageBastardlogo {
-        grid-area: logo;
-          width: 80px;
-    height: auto;
-    z-index: -1;
-    }
-
-    .venueHouse {
-        grid-area: titleV;
-    }
-    .venueDescription {
-        grid-area: description;
-    }
-    .location {
-        grid-area: location;
-    }
-    .hours {
-        grid-area: hours;
-    }
-    .contactName {
-        grid-area: cname;
-    }
-    .phone {
-        grid-area: phone;
-    }
-    .externalSite {
-        grid-area: site;
-    }
-
-    .mainVenue {
-        grid-area: mainV;
-    }
-    .leftVenue {
-        grid-area: leftV;
-    }
-    #venues {
-        grid-area: venues;
-    }
-
-
-    /******/
-    main.mainVenue {
-        display: grid;
-        grid-template-columns: 250px 1fr 250px;
-        grid-template-areas:
-            "leftV venues logo";
-    }
-
-    #venues {
-        display: grid;
-        grid-area: venues;
-        grid-template-columns: 1fr;
-        /* Keep adding new columns - even if theres is no content for them. content does not alwys take up full width */
-        /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
-        /* Don't add more columns than theres is content for. && +content "always" take full width */
-        grid-gap: 3rem;
-        /*general style*/
-        padding: 20px;
-        align-items: center;
-        justify-content: center;
-    }
-  /*EVENTS general style*/
-   /*events IMAGE*/
-    img.cover {
-        background-position: center;
-        display: block;
-        margin: 0 auto;
-        width: 100%;
-        height: auto;
-        opacity: 1;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    /*image HOVER*/
-    img.cover:hover  {
-  opacity: 0.5;
-
-}
-    p.shortdescription {
-        text-align: left;
-        font-weight: 100;
-        font-size: 14px;
-        font-family: 'Roboto', sans-serif;
-        padding: 10px;
-    }
-    p.date {
-        font-family: 'Merriweather Sans', sans-serif;
-        text-align: right;
-        font-weight: 100;
-        color: black;
-    }
-
-    /*TAGS categories*/
-
-    p.tagTitle {
-        grid-area: tagTitle;
-    }
-    #tagNav.a {
-        grid-area: tagItem;
-
-    }
-
-    #tagNav {
-     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 20px 20px 20px 1fr;
-    grid-gap: 5px;
-    padding: 0px;
-         text-align: center;
-    grid-template-areas: "tagTitle tagTitle tagTitle"
-        "tagItem tagItem tagItem";
-        ". noresult .";
-}
-
-
-}
 
 /**/
 
@@ -497,4 +307,195 @@ width: 80px;
     z-index: 1;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
+}
+
+
+
+
+@supports (display: grid) {
+
+   .somebar {
+        grid-area: left;
+       position:fixed;
+   z-index: 1;
+    } #tagNav {
+        grid-area: tags;
+
+align-items: center;
+justify-content: center;
+        padding: 10px;
+    }
+    nav {
+     grid-area: nav;
+    }
+    .search {
+        grid-area: search;
+        display: flex;
+align-items: center;
+justify-content: center;
+    }
+    .pageName {
+    grid-area: title;
+        color: lightgrey;
+       font-family: 'Roboto', sans-serif;
+        background-color: white;
+/*       border-bottom: 3px solid #f25244;*/
+        width: max-content;
+        text-transform: lowercase;
+      }
+
+    main.eventsMain {
+        display: grid;
+        grid-template-columns: 200px 1fr 250px;
+        grid-template-areas:
+            "nav nav nav"
+            "left title search"
+            ". events tags";
+    }
+    #events {
+        display: grid;
+        grid-area: events;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        /* Keep adding new columns - even if theres is no content for them. content does not alwys take up full width */
+        /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+        /* Don't add more columns than theres is content for. && +content "always" take full width */
+        grid-gap: 3rem;
+        /*general style*/
+        padding: 5px;
+        align-items: center;
+        justify-content: center;
+
+    }
+/*SUB page: detailed event*/
+    .subArticle {
+        grid-area: subArt;
+        padding: 30px;
+    }
+    main.subMain {
+        display: grid;
+        grid-template-columns: 300px 1fr 400px;
+        grid-template-rows: 50px 100px 1fr;
+
+        grid-template-areas:
+            "nav nav nav"
+            "left subArt search"
+            "left subArt tags"
+            "left subArt .";
+    }
+    /*BASTARD CAFE page*/
+
+    .imageBastardlogo {
+        grid-area: logo;
+          width: 80px;
+    height: auto;
+    z-index: -1;
+    }
+
+    .venueHouse {
+        grid-area: titleV;
+    }
+    .venueDescription {
+        grid-area: description;
+    }
+    .location {
+        grid-area: location;
+    }
+    .hours {
+        grid-area: hours;
+    }
+    .contactName {
+        grid-area: cname;
+    }
+    .phone {
+        grid-area: phone;
+    }
+    .externalSite {
+        grid-area: site;
+    }
+
+    .mainVenue {
+        grid-area: mainV;
+    }
+    .somebar {
+        grid-area: left;
+    }
+    #venues {
+        grid-area: venues;
+    }
+
+
+    /******/
+    main.mainVenue {
+        display: grid;
+        grid-template-columns: 250px 1fr 250px;
+        grid-template-areas:
+            "left venues logo";
+    }
+
+    #venues {
+        display: grid;
+        grid-area: venues;
+        grid-template-columns: 1fr;
+        /* Keep adding new columns - even if theres is no content for them. content does not alwys take up full width */
+        /*grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+        /* Don't add more columns than theres is content for. && +content "always" take full width */
+        grid-gap: 3rem;
+        /*general style*/
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+  /*EVENTS general style*/
+   /*events IMAGE*/
+    img.cover {
+        background-position: center;
+        display: block;
+        margin: 0 auto;
+        width: 100%;
+        height: auto;
+        opacity: 1;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    /*image HOVER*/
+    img.cover:hover  {
+  opacity: 0.5;
+
+}
+    p.shortdescription {
+        text-align: left;
+        font-weight: 100;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        padding: 10px;
+    }
+    p.date {
+        font-family: 'Merriweather Sans', sans-serif;
+        text-align: right;
+        font-weight: 100;
+        color: black;
+    }
+
+    /*TAGS categories*/
+
+    p.tagTitle {
+        grid-area: tagTitle;
+    }
+    #tagNav.a {
+        grid-area: tagItem;
+
+    }
+
+    #tagNav {
+     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 20px 20px 20px 1fr;
+    grid-gap: 5px;
+    padding: 0px;
+         text-align: center;
+    grid-template-areas: "tagTitle tagTitle tagTitle"
+        "tagItem tagItem tagItem";
+        ". noresult .";
+}
+
+
 }
